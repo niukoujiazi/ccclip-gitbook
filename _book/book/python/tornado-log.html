@@ -1,0 +1,858 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Tornado日志 · 纽扣夹子的笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Clip">
+        <meta name="identifier" content="123" scheme="ISBN">
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="tornado-tcpserver.html" />
+    
+    
+    <link rel="prev" href="python-str.html" />
+    
+
+    </head>
+    <body>
+        
+
+
+<div class="book">
+    <div class="book-summary">
+        
+            <div class="theme-code-header">
+                <a href="./" class="link">
+                    <h1 class="title">纽扣夹子的笔记</h1>
+                </a>
+            </div>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../linux/readme.html">
+            
+                <a href="../linux/readme.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../linux/contos-config.html">
+            
+                <a href="../linux/contos-config.html">
+            
+                    
+                    Centos配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../linux/ubuntu-install.html">
+            
+                <a href="../linux/ubuntu-install.html">
+            
+                    
+                    Ubuntu安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../linux/ubuntu-wine.html">
+            
+                <a href="../linux/ubuntu-wine.html">
+            
+                    
+                    Ubuntu安装wine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../linux/linux-operation.html">
+            
+                <a href="../linux/linux-operation.html">
+            
+                    
+                    Linux配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../linux/env-coding-error.html">
+            
+                <a href="../linux/env-coding-error.html">
+            
+                    
+                    Linux环境编码错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../linux/ssh.html">
+            
+                <a href="../linux/ssh.html">
+            
+                    
+                    ssh密钥
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../linux/Tcpdump.html">
+            
+                <a href="../linux/Tcpdump.html">
+            
+                    
+                    Tcpdump抓包工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../linux/VIM.html">
+            
+                <a href="../linux/VIM.html">
+            
+                    
+                    VIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="crc.html">
+            
+                <a href="crc.html">
+            
+                    
+                    CRC循環冗餘校驗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="python-xadmin.html">
+            
+                <a href="python-xadmin.html">
+            
+                    
+                    python xadmin模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="python-sockt.html">
+            
+                <a href="python-sockt.html">
+            
+                    
+                    python sockt网络编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="python-unpack.html">
+            
+                <a href="python-unpack.html">
+            
+                    
+                    python打包Django
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="get-ip.html">
+            
+                <a href="get-ip.html">
+            
+                    
+                    python动态获取公网IP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="python-connection-sqlserver2008.html">
+            
+                <a href="python-connection-sqlserver2008.html">
+            
+                    
+                    python远程连接SqlServer2008R2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="python-dll.html">
+            
+                <a href="python-dll.html">
+            
+                    
+                    python调用dll
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="python-windows.html">
+            
+                <a href="python-windows.html">
+            
+                    
+                    python注册windows服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="python-str.html">
+            
+                <a href="python-str.html">
+            
+                    
+                    python字符操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.10" data-path="tornado-log.html">
+            
+                <a href="tornado-log.html">
+            
+                    
+                    Tornado日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="tornado-tcpserver.html">
+            
+                <a href="tornado-tcpserver.html">
+            
+                    
+                    Tornado TCPServer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../docker/readme.html">
+            
+                <a href="../docker/readme.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../docker/docker.html">
+            
+                <a href="../docker/docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../docker/harbor.html">
+            
+                <a href="../docker/harbor.html">
+            
+                    
+                    harbor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../docker/harbor2.html">
+            
+                <a href="../docker/harbor2.html">
+            
+                    
+                    harbor2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../v2ray/v2ray.html">
+            
+                <a href="../v2ray/v2ray.html">
+            
+                    
+                    V2ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../supervisor/readme.html">
+            
+                <a href="../supervisor/readme.html">
+            
+                    
+                    supervisor
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../supervisor/supervisor.html">
+            
+                <a href="../supervisor/supervisor.html">
+            
+                    
+                    supervisor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../windows/readme.html">
+            
+                <a href="../windows/readme.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../windows/windows-update-close.html">
+            
+                <a href="../windows/windows-update-close.html">
+            
+                    
+                    windows自动更新关闭
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../redis.html">
+            
+                <a href="../redis.html">
+            
+                    
+                    Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../selserver2008-trigger.html">
+            
+                <a href="../selserver2008-trigger.html">
+            
+                    
+                    SQLServer2008触发器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../mysql.html">
+            
+                <a href="../mysql.html">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../postgresql.html">
+            
+                <a href="../postgresql.html">
+            
+                    
+                    Postgresql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../shell.html">
+            
+                <a href="../shell.html">
+            
+                    
+                    shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../other/readme.html">
+            
+                <a href="../other/readme.html">
+            
+                    
+                    Other
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="" target="_blank" class="gitbook-link">
+            作者：Clip
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Tornado日志</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#tornado-&#x65E5;&#x5FD7;"><b></b>Tornado &#x65E5;&#x5FD7;</a></li><li><span class="title-icon "></span><a href="#&#x53C2;&#x8003;"><b></b>&#x53C2;&#x8003;</a></li><li><span class="title-icon "></span><a href="#&#x4EE3;&#x7801;&#x53C2;&#x8003;"><b></b>&#x4EE3;&#x7801;&#x53C2;&#x8003;</a></li><li><span class="title-icon "></span><a href="#&#x601D;&#x8DEF;"><b></b>&#x601D;&#x8DEF;</a></li><li><span class="title-icon "></span><a href="#&#x91CD;&#x5199;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;"><b></b>&#x91CD;&#x5199;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;</a></li></ul></div><a href="#tornado-&#x65E5;&#x5FD7;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="tornado-&#x65E5;&#x5FD7;"><a name="tornado-&#x65E5;&#x5FD7;" class="anchor-navigation-ex-anchor" href="#tornado-&#x65E5;&#x5FD7;"><i class="fa fa-link" aria-hidden="true"></i></a>Tornado &#x65E5;&#x5FD7;</h1>
+<h1 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;</h1>
+<p><a href="Python&#x4E2D;logging&#x6A21;&#x5757;&#x7684;&#x57FA;&#x672C;&#x7528;&#x6CD5;">https://cuiqingcai.com/6080.html</a></p>
+<p><a href="&#x5982;&#x4F55;&#x5C06;Tornado&#x65E5;&#x5FD7;&#x5B58;&#x50A8;&#x5230;&#x6587;&#x4EF6;&#xFF1F;">https://codeday.me/bug/20190216/634978.html</a></p>
+<p><a href="tornado&#x65E5;&#x5FD7;&#x7BA1;&#x7406;">https://www.jianshu.com/p/8c74a3d87567</a></p>
+<h1 id="&#x4EE3;&#x7801;&#x53C2;&#x8003;"><a name="&#x4EE3;&#x7801;&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x4EE3;&#x7801;&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EE3;&#x7801;&#x53C2;&#x8003;</h1>
+<pre><code># !/usr/bin/env python
+# codig=utf-8
+
+import tornado.ioloop
+import tornado.options
+import tornado.httpserver
+import pymongo
+import motor.motor_tornado
+from tornado.log import enable_pretty_logging
+import logging
+
+from application import application
+
+from tornado.options import define, options
+
+# &#x65E5;&#x5FD7;
+# &#x5B9A;&#x4E49;logger&#x5E76;&#x8D77;&#x540D;server&#x7528;&#x4E8E;&#x65E5;&#x5FD7;&#x914D;&#x7F6E;&#x5171;&#x4EAB;
+logger = logging.getLogger(&quot;server&quot;)
+logger.setLevel(level=logging.INFO)
+handler = logging.handlers.RotatingFileHandler(&quot;/var/log/tornado/tornado.log&quot;,
+        mode=&quot;a&quot;, maxBytes=1048000, backupCount=10, encoding=&quot;utf-8&quot;)
+formatter = logging.Formatter(&apos;%(asctime)s - %(name)s - %(levelname)s - %(message)s&apos;)
+handler.setFormatter(formatter)
+# tornado&#x7684;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x5668;&#xFF0C;access&#x662F;web&#x8BBF;&#x95EE;&#x4FE1;&#x606F;
+app_log = logging.getLogger(&quot;tornado.application&quot;)
+access_log = logging.getLogger(&quot;tornado.access&quot;)
+gen_log = logging.getLogger(&quot;tornado.general&quot;)
+enable_pretty_logging()
+app_log.addHandler(handler)
+access_log.addHandler(handler)
+gen_log.addHandler(handler)
+logger.addHandler(handler)
+
+
+define(&quot;port&quot;,default = 8000, help = &quot;run on the given port&quot;, type = int)
+
+class LogFormatter(tornado.log.LogFormatter):
+    &quot;&quot;&quot;
+    &#x91CD;&#x5199;tornado&#x65E5;&#x5FD7;&#x6A21;&#x5757;&#x7684;&#x683C;&#x5F0F;
+    &quot;&quot;&quot;
+    def __init__(self):
+        super(LogFormatter, self).__init__(
+                fmt=&apos;%(color)s[%(asctime)s %(filename)s:%(funcName)s:%(lineno)d %(levelname)s]%(end_color)s %(message)s&apos;,
+                datefmt=&apos;%Y-%m-%d %H:%M:%S&apos;
+                )
+
+def main():
+    tornado.options.parse_command_line()
+    # [i.setFormatter(LogFormatter()) for i in logging.getLogger().handlers]
+    http_server = tornado.httpserver.HTTPServer(application)
+    http_server.listen(options.port)
+
+    print(&quot;runing at http://127.0.0.1:{}&quot;.format(options.port))
+    print(&quot;Quite the server with Control-C&quot;)
+    http_server.start(0)
+
+    # &#x4E3A;&#x6BCF;&#x4E2A;&#x5B50;&#x8FDB;&#x7A0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;MotorClient
+    application.settings[&apos;db&apos;] = motor.motor_tornado.MotorClient(&quot;localhost&quot;,27017).testdb
+    tornado.ioloop.IOLoop.instance().start()
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre><h1 id="&#x601D;&#x8DEF;"><a name="&#x601D;&#x8DEF;" class="anchor-navigation-ex-anchor" href="#&#x601D;&#x8DEF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x601D;&#x8DEF;</h1>
+<p>tornado&#x662F;&#x4F7F;&#x7528;<code>logging</code>&#x6A21;&#x5757;&#x6765;&#x8FDB;&#x884C;&#x65E5;&#x5FD7;&#x7BA1;&#x7406;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;logging&#x7684;
+&#x5904;&#x7406;&#x5668;(<code>handler</code>)&#xFF0C;&#x5C06;tornado&#x81EA;&#x5DF1;&#x7684;&#x4E09;&#x4E2A;&#x5904;&#x7406;&#x5668;<code>tornado.application</code> <code>tornado.access</code>
+<code>tornado.access</code>&#x83B7;&#x53D6;&#x5230;&#x4E4B;&#x540E;&#x4E3A;&#x5176; <code>addHandler</code> &#x81EA;&#x5DF1;&#x7684;&#x5904;&#x7406;&#x5668;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5728;
+tornado&#x6709;&#x8F93;&#x51FA;&#x7684;&#x540C;&#x65F6;&#x5C06;&#x8F93;&#x51FA;&#x4E00;&#x4EFD;&#x5230;&#x6587;&#x4EF6;</p>
+<h1 id="&#x91CD;&#x5199;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;"><a name="&#x91CD;&#x5199;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x91CD;&#x5199;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x91CD;&#x5199;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;</h1>
+<p>tornado&#x7684;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;&#x662F;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x7684;&#x3002;&#x53C2;&#x8003;&#x4E0A;&#x9762;&#x4EE3;&#x7801;</p>
+<pre><code>class LogFormatter(tornado.log.LogFormatter):
+    &quot;&quot;&quot;
+    &#x91CD;&#x5199;tornado&#x65E5;&#x5FD7;&#x6A21;&#x5757;&#x7684;&#x683C;&#x5F0F;
+    &quot;&quot;&quot;
+    def __init__(self):
+        super(LogFormatter, self).__init__(
+                fmt=&apos;%(color)s[%(asctime)s %(filename)s:%(funcName)s:%(lineno)d %(levelname)s]%(end_color)s %(message)s&apos;,
+                datefmt=&apos;%Y-%m-%d %H:%M:%S&apos;
+                )
+
+def main():
+    .........
+    [i.setFormatter(LogFormatter()) for i in logging.getLogger().handlers]
+    .........
+</code></pre><footer class="page-footer"><span class="copyright">By Clip all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-10-10 11:42:31
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="python-str.html" class="navigation navigation-prev " aria-label="Previous page: python字符操作">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="tornado-tcpserver.html" class="navigation navigation-next " aria-label="Next page: Tornado TCPServer">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Tornado日志","level":"1.3.10","depth":2,"next":{"title":"Tornado TCPServer","level":"1.3.11","depth":2,"path":"book/python/tornado-tcpserver.md","ref":"book/python/tornado-tcpserver.md","articles":[]},"previous":{"title":"python字符操作","level":"1.3.9","depth":2,"path":"book/python/python-str.md","ref":"book/python/python-str.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-code@0.0.20","-sharing","-lunr","-search","search-pro","splitter","tbfed-pagefooter","expandable-chapters-small","github","-sharing-plus","code","-copy-code-button","anchor-navigation-ex","edit-link","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"By Clip","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/niukoujiazi"},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"theme-code":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"edit-link":{"label":"","base":"https://github.com/niukoujiazi"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Clip","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"123","variables":{},"title":"纽扣夹子的笔记","language":"zh-tw","gitbook":"*","description":"纽扣夹子的笔记","direction":"ltr"},"file":{"path":"book/python/tornado-log.md","mtime":"2019-10-10T03:42:31.051Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-10T02:04:37.686Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
