@@ -35,5 +35,6 @@
 * [Mysql](book/mysql.md)
 * [Postgresql](book/postgresql.md)
 * [shell](book/shell.md)
+* [GIT](book/git/git.md)
 * [Other](book/other/readme.md)
 
